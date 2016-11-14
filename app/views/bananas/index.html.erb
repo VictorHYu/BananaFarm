@@ -1,0 +1,26 @@
+<h1>Banana Farm</h1>
+ 
+<table>
+  <tr>
+    <th>Length</th>
+    <th>Flavour</th>
+  </tr>
+ 
+  <% @allbananas.each do |singlebanana| %>
+    <tr>
+      <td><%= singlebanana.length %></td>
+      <td><%= singlebanana.flavour %></td>
+      <td><%= link_to 'Inspect', banana_path(singlebanana) %></td>
+      <td><%= link_to 'Re-grow', edit_banana_path(singlebanana) %></td>
+      <td><%= link_to 'Eat', banana_path(singlebanana), method: :delete, data: { confirm: 'Are you really that hungry?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br/>
+
+<%= link_to 'Grow me a banana!', new_banana_path %>
+
+<br/>
+
+<%= link_to 'Back', root_url %>
