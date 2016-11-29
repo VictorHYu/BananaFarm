@@ -1,4 +1,15 @@
-<h1>Hello, Rails!</h1>
-<%= link_to 'My Bananas', controller: 'bananas' %>
-<br/>
-<%= link_to 'New Banana', new_banana_path %>
+<div id = "header">
+	<h1 class = "no_margin">The Banana Farm</h1>
+</div>
+
+	<%= link_to controller: 'bananas' do %>
+		<div class = "wrapper center">
+			<h2 class = "buttonText"> Go To My Farm </h2>
+		</div>
+	<% end %>
+
+	<%= link_to new_banana_path do %>
+		<div class = "wrapper center">
+			<h2 class = "buttonText"> Help </h2>
+		</div>
+	<% end %>

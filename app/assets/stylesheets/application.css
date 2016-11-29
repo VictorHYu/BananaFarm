@@ -13,4 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap";
+
+body{
+	background-color: yellow;
+	background-image: url(/assets/upfeathers.png);
+}
