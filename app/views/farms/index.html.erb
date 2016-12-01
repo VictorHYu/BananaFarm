@@ -1,0 +1,18 @@
+<h1>Current Operating Farms</h1>
+ 
+<table id = "tabledank">
+ 
+  <% @allfarms.each do |farm| %>
+    <tr>
+      <td><%= farm.title %></td>
+      <td><%= link_to 'Take me there!', farm_path(farm) %></td>
+      <td><%= link_to 'Re-name', edit_farm_path(farm) %></td>
+      <td><%= link_to 'Delete', farm_path(farm), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br/>
+<%= link_to 'I want to start a new farm!', new_farm_path %>
+<br/>
+<%= link_to 'Back', root_url %>

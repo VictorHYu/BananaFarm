@@ -1,14 +1,14 @@
 <h1>Grow a New Banana</h1>
 
-<%= form_for :bananas, url: bananas_path do |f| %>
+<%= form_for(@banana, :url=>farm_bananas_path(@farm)) do |f| %>
 
-  <% if @singlebanana.errors.any? %>
+  <% if @banana.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@singlebanana.errors.count, "error") %> prohibited this article from being saved:
+        <%= pluralize(@banana.errors.count, "error") %> prohibited this article from being saved:
       </h2>
       <ul>
-        <% @singlebanana.errors.full_messages.each do |msg| %>
+        <% @banana.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -24,11 +24,16 @@
     <%= f.label :Flavour %><br>
     <%= f.text_area :flavour %>
   </p>
+
+  <p>
+    <%= f.label :Value %><br>
+    <%= f.text_area :value %>
+  </p>
  
   <p>
     <%= f.submit %>
   </p>
 <% end %>
 
-<%= link_to 'Back', bananas_path %>
+<%= link_to 'Back', farms_path %>
 

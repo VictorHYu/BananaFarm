@@ -6,12 +6,13 @@
     <th>Flavour</th>
   </tr>
  
-  <% @allbananas.each do |singlebanana| %>
+  <% @bananas.each do |singlebanana| %>
     <tr>
       <td><%= singlebanana.length %></td>
       <td><%= singlebanana.flavour %></td>
       <td><%= link_to 'Inspect', banana_path(singlebanana) %></td>
       <td><%= link_to 'Re-grow', edit_banana_path(singlebanana) %></td>
+      <td><%= link_to 'Enlarge', banana_path(singlebanana), :method => :patch %></td>
       <td><%= link_to 'Eat', banana_path(singlebanana), method: :delete, data: { confirm: 'Are you really that hungry?' } %></td>
     </tr>
   <% end %>

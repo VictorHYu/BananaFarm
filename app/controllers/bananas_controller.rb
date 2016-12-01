@@ -1,49 +1,50 @@
 class BananasController < ApplicationController
-	def index
-		@allbananas = Banana.all
+	respond_to :html, :xml, :json
+
+  	def new
+		@farm = Farm.find(params[:farm_id])
+    	@banana = @farm.bananas.new
+   		respond_with (@banana)
 	end
 
-	def show
-		@singlebanana = Banana.find(params[:id])
-	end
+  	def create
+	    @farm = Farm.find(params[:farm_id])
+    	@banana = @farm.bananas.build(banana_params)
+    	if @banana.save
+    		redirect_to farm_path(@farm)
+    	else
+	  		render 'new'
+    	end
 
-	def new
-		@singlebanana = Banana.new
+  	end
+
+  	def destroy
+  		  @farm = Farm.find(params[:farm_id])
+		  @banana = @farm.bananas.find(params[:id])
+ 		
+ 		  @banana.decrement(:length, by = 1)
+		  @banana.save
+
+  	      redirect_to farm_path(@farm)
 	end
 
 	def edit
-		@singlebanana = Banana.find(params[:id])
-	end
-
-	def create
-	  @singlebanana = Banana.new(singlebanana_params) 	
-	 
-	  if @singlebanana.save
-		redirect_to @singlebanana
-	  else
-	  	render 'new'
-	  end
+		@farm = Farm.find(params[:farm_id])
+		@banana = @farm.bananas.find(params[:id])
 	end
 
 	def update
-		@singlebanana = Banana.find(params[:id])
- 
-  		if @singlebanana.update(singlebanana_params)
-    		redirect_to @singlebanana
-  		else
-    		render 'edit'
-  		end
-	end
+		sleep 3
+		@farm = Farm.find(params[:farm_id])
+		@banana = @farm.bananas.find(params[:id])
+		@banana.increment(:length, by = 1)
+		@banana.save
 
-	def destroy
-		  @singlebanana = Banana.find(params[:id])
-  		  @singlebanana.destroy
- 
-  	      redirect_to bananas_path
+		redirect_to farm_path(@farm)
 	end
 
 	private
-  		def singlebanana_params
-    		params.require(:bananas).permit(:length, :flavour)
-  		end
+	def banana_params
+		params.require(:banana).permit(:length, :flavour, :value)
+	end
 end

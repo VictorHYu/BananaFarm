@@ -19,6 +19,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass'
 gem 'jquery-ui-rails'
 gem 'coffee-script-source', '1.8.0'
+gem 'responders', '~> 2.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

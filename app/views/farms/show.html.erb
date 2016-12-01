@@ -1,0 +1,26 @@
+<h1> <%= @farm.title %> </h1>
+ 
+<table>
+  <tr> Bananas: </tr>
+  <tr>
+    <th>Length</th>
+    <th>Flavour</th>
+    <th>Value</th>
+
+  <% @allbananas.each do |banana| %>
+    <tr>
+      <td><%= banana.length %></td>
+      <td><%= banana.flavour %></td>
+      <td><%= banana.value %></td>
+      <td><%= link_to 'Re-Name', edit_farm_banana_path(banana) %></td>
+      <td><%= link_to 'Enlarge', [@farm, banana], :method => :patch %></td>
+      <td><%= link_to "Eat", [@farm, banana], :method  => :delete, data: { confirm: 'Are you really that hungry?' } %></td>
+    </tr>
+  <% end %>
+  </tr>
+
+</table>
+
+<%= link_to 'Grow banana', new_farm_banana_path(@farm) %>
+</br>
+<%= link_to 'Back', farms_path %>
