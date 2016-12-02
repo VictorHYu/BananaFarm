@@ -1,14 +1,14 @@
-<h1>Re-Grow Banana</h1>
+<h1>Re-Name Banana</h1>
  
-<%= form_for :bananas, url: banana_path(@singlebanana), method: :patch do |f| %>
+<%= form_for :bananas, url: edit_farm_banana_path(@banana), method: :patch do |f| %>
  
-  <% if @singlebanana.errors.any? %>
+  <% if @banana.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@singlebanana.errors.count, "error") %> prohibited this article from being saved:
+        <%= pluralize(@banana.errors.count, "error") %> prohibited this article from being saved:
       </h2>
       <ul>
-        <% @singlebanana.errors.full_messages.each do |msg| %>
+        <% @banana.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
@@ -24,6 +24,11 @@
     <%= f.label :Flavour %><br>
     <%= f.text_area :flavour %>
   </p>
+
+  <p>
+    <%= f.label :Value %><br>
+    <%= f.text_area :value %>
+  </p>
  
   <p>
     <%= f.submit %>
@@ -31,4 +36,4 @@
  
 <% end %>
  
-<%= link_to 'Back', bananas_path %>
+<%= link_to 'Back', farm_path(@farm) %>

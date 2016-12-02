@@ -15,22 +15,11 @@ class BananasController < ApplicationController
     	else
 	  		render 'new'
     	end
-
   	end
-
-  	def destroy
-  		  @farm = Farm.find(params[:farm_id])
-		  @banana = @farm.bananas.find(params[:id])
- 		
- 		  @banana.decrement(:length, by = 1)
-		  @banana.save
-
-  	      redirect_to farm_path(@farm)
-	end
 
 	def edit
 		@farm = Farm.find(params[:farm_id])
-		@banana = @farm.bananas.find(params[:id])
+		@banana = @farm.bananas.find(params[:banana_id])
 	end
 
 	def update
@@ -38,6 +27,27 @@ class BananasController < ApplicationController
 		@farm = Farm.find(params[:farm_id])
 		@banana = @farm.bananas.find(params[:id])
 		@banana.increment(:length, by = 1)
+		@banana.save
+
+		redirect_to farm_path(@farm)
+	end
+
+	def add
+		sleep 3
+		@farm = Farm.find(params[:farm_id])
+		@banana = @farm.bananas.find(params[:banana_id])
+		@banana.increment(:length, by = 1)
+		@banana.save
+
+		redirect_to farm_path(@farm)
+	end
+
+	def remove
+		sleep 3
+
+		@farm = Farm.find(params[:farm_id])
+		@banana = @farm.bananas.find(params[:banana_id])
+		@banana.decrement(:length, by = 1)
 		@banana.save
 
 		redirect_to farm_path(@farm)

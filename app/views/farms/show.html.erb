@@ -1,26 +1,45 @@
-<h1> <%= @farm.title %> </h1>
- 
-<table>
-  <tr> Bananas: </tr>
-  <tr>
-    <th>Length</th>
-    <th>Flavour</th>
-    <th>Value</th>
+<h2> <%= @farm.title %> </h2>
 
+<div class>
   <% @allbananas.each do |banana| %>
-    <tr>
-      <td><%= banana.length %></td>
-      <td><%= banana.flavour %></td>
-      <td><%= banana.value %></td>
-      <td><%= link_to 'Re-Name', edit_farm_banana_path(banana) %></td>
-      <td><%= link_to 'Enlarge', [@farm, banana], :method => :patch %></td>
-      <td><%= link_to "Eat", [@farm, banana], :method  => :delete, data: { confirm: 'Are you really that hungry?' } %></td>
-    </tr>
+
+    <div class = 'horizontal_align center'>   
+      <div class = 'param'> Name: <%= banana.flavour %> </div>
+      <div class = 'param'> Quantity: <%= banana.length  %> </div>
+      <div class = 'param'> Value: <%= banana.value   %> </div>
+    </div>
+
+    <div class = 'horizontal_align center'>
+      <%= link_to edit_farm_banana_path(:banana_id => banana, :farm_id => @farm) do %>
+        <div class = "small_button button center">
+          <h2 class = "small_button_text"> Rename </h2>
+        </div>
+      <% end %>
+
+      <%= link_to farm_banana_add_path(:banana_id => banana, :farm_id => @farm), :method => :patch do %>
+        <div class = "small_button button center">
+          <h2 class = "small_button_text"> Grow </h2>
+        </div>
+      <% end %>
+
+      <%= link_to farm_banana_remove_path(:banana_id => banana, :farm_id => @farm), :method  => :patch, data: { confirm: 'Are you really that hungry?' } do %>
+        <div class = "small_button button center">
+          <h2 class = "small_button_text"> Eat</h2>
+        </div>
+      <% end %>
+    </div>
+
   <% end %>
-  </tr>
+</div>
 
-</table>
+<%= link_to new_farm_banana_path(@farm) do %>
+  <div class = "med_button button horizontal_align center">
+    <h2 class = "med_button_text"> New Banana </h2>
+  </div>
+<% end %>
 
-<%= link_to 'Grow banana', new_farm_banana_path(@farm) %>
-</br>
-<%= link_to 'Back', farms_path %>
+<%= link_to farms_path do %>
+  <div class = "med_button button center">
+    <h2 class = "med_button_text"> Back </h2>
+  </div>
+<% end %>

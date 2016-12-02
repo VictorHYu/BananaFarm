@@ -18,3 +18,90 @@ body{
 	background-color: yellow;
 	background-image: url(/assets/upfeathers.png);
 }
+
+.no_margin{
+	margin:0;
+}
+
+.horizontal_align {
+	display:block;
+	margin: 0 auto;
+}
+
+.center {
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+}
+.col {
+	flex-direction: column;
+}
+
+.iblock{
+	display: inline-block;
+}
+
+h1 {
+	text-align:center;
+	font-size: 100px;
+}
+
+h2 {
+	text-align:center;
+	font-size: 75px;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.button {
+	cursor:pointer;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+.med_button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	width:120px;
+	height: 40px;
+
+	background:linear-gradient(to bottom, #a2e663 5%, #62b81b 100%);
+	background-color:#a2e663;
+	border-radius:6px;
+	border:1px solid #268a16;
+	color:#306108;
+}
+.med_button:hover {
+	background:linear-gradient(to bottom, #62b81b 5%, #a2e663 100%);
+	background-color:#62b81b;
+}
+
+.med_button_text {
+	font-size: 20px;
+}
+
+
+.small_button {
+	margin: 10px;
+	width:60px;
+	height: 20px;
+
+	background:linear-gradient(to bottom, #ffff00 5%, #ffff85 100%);
+	background-color:#ffff00;
+	border-radius:6px;
+	border:1px solid #d6a100;
+	color:#000000;
+}
+.small_button:hover {
+	background:linear-gradient(to bottom, #ffff85 5%, #ffff00 100%);
+	background-color:#ffff85;
+}
+
+.small_button_text {
+	font-size: 12px;
+}
