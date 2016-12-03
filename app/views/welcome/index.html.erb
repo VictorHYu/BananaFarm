@@ -1,13 +1,13 @@
+<div>
 <h1>The Banana Farm</h1>
+</div>
 
-<%= link_to controller: 'farms' do %>
-	<div class = "wrapper center">
-		<h2 class = "buttonText"> Find Me A Farm</h2>
-	</div>
-<% end %>
+<div class = "center col" >
+	<%= link_to farms_path, class: "wrapper center" do %>
+		<h2 class = "buttonText no_margin"> Find Me A Farm</h2>
+	<% end %>
 
-<%= link_to controller: 'help' do %>
-	<div class = "wrapper center button">
-		<h2 class = "buttonText"> Help </h2>
-	</div>
-<% end %>
+	<%= link_to help_index_path, class: "wrapper center" do %>
+		<h2 class = "buttonText no_margin"> Help </h2>
+	<% end %>
+</div>

@@ -1,45 +1,36 @@
 <h2> <%= @farm.title %> </h2>
 
-<div class>
+<div>
   <% @allbananas.each do |banana| %>
-
-    <div class = 'horizontal_align center'>   
+  <div id = "banana_row">
+    <div class = "banana_row_top center">   
+      <img class = 'banana' src = "/assets/bananas.png"> 
       <div class = 'param'> Name: <%= banana.flavour %> </div>
       <div class = 'param'> Quantity: <%= banana.length  %> </div>
       <div class = 'param'> Value: <%= banana.value   %> </div>
     </div>
 
-    <div class = 'horizontal_align center'>
-      <%= link_to edit_farm_banana_path(:banana_id => banana, :farm_id => @farm) do %>
-        <div class = "small_button button center">
-          <h2 class = "small_button_text"> Rename </h2>
-        </div>
+    <div class = "banana_row_bot center">
+      <%= link_to edit_farm_banana_path(:banana_id => banana, :farm_id => @farm), class: "small_button button center" do %>
+        <h3 class = "small_button_text no_margin"> Rename </h3>
       <% end %>
 
-      <%= link_to farm_banana_add_path(:banana_id => banana, :farm_id => @farm), :method => :patch do %>
-        <div class = "small_button button center">
-          <h2 class = "small_button_text"> Grow </h2>
-        </div>
+      <%= link_to farm_banana_add_path(:banana_id => banana, :farm_id => @farm), :method => :patch, class: "small_button button center" do %>
+        <h3 class = "small_button_text no_margin"> Grow </h3>
       <% end %>
 
-      <%= link_to farm_banana_remove_path(:banana_id => banana, :farm_id => @farm), :method  => :patch, data: { confirm: 'Are you really that hungry?' } do %>
-        <div class = "small_button button center">
-          <h2 class = "small_button_text"> Eat</h2>
-        </div>
+      <%= link_to farm_banana_remove_path(:banana_id => banana, :farm_id => @farm), :method  => :patch, data: { confirm: 'Are you really that hungry?' }, class: "small_button button center" do %>
+        <h3 class = "small_button_text no_margin"> Eat</h3>
       <% end %>
     </div>
-
+  </div>
   <% end %>
 </div>
 
-<%= link_to new_farm_banana_path(@farm) do %>
-  <div class = "med_button button horizontal_align center">
-    <h2 class = "med_button_text"> New Banana </h2>
-  </div>
+<%= link_to new_farm_banana_path(@farm), class: "med_button button horizontal_align center", id: "new_banana" do %>
+  <h3 class = "med_button_text"> New Banana </h3>
 <% end %>
 
-<%= link_to farms_path do %>
-  <div class = "med_button button center">
-    <h2 class = "med_button_text"> Back </h2>
-  </div>
+<%= link_to farms_path, class: "med_button button center", id: "back_button" do %>
+    <h3 class = "med_button_text"> Back </h3>
 <% end %>

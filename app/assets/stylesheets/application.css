@@ -15,17 +15,15 @@
  */
 
 body{
-	background-color: yellow;
-	background-image: url(/assets/upfeathers.png);
+	background-image: url(/assets/beach.jpg);
+	background-repeat: none;
+	background-size: cover;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/beach.jpg);
+	background-attachment: fixed;
 }
 
 .no_margin{
 	margin:0;
-}
-
-.horizontal_align {
-	display:block;
-	margin: 0 auto;
 }
 
 .center {
@@ -44,41 +42,35 @@ body{
 h1 {
 	text-align:center;
 	font-size: 100px;
+	margin: 30px 20px;
+	color: #FFFC4F;
 }
 
 h2 {
 	text-align:center;
 	font-size: 75px;
+	color: #FFFC4F;
 }
 
 a {
 	text-decoration: none !important;
+	color: white;
 }
 
 .button {
 	cursor:pointer;
 }
-.button:active {
-	position:relative;
-	top:1px;
-}
 
 .med_button {
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 0px 20px 0px;
 
 	width:120px;
 	height: 40px;
 
-	background:linear-gradient(to bottom, #a2e663 5%, #62b81b 100%);
 	background-color:#a2e663;
 	border-radius:6px;
 	border:1px solid #268a16;
 	color:#306108;
-}
-.med_button:hover {
-	background:linear-gradient(to bottom, #62b81b 5%, #a2e663 100%);
-	background-color:#62b81b;
 }
 
 .med_button_text {
@@ -87,19 +79,16 @@ a {
 
 
 .small_button {
-	margin: 10px;
+	margin: 10px 10px 10px 10px;
+
+
 	width:60px;
 	height: 20px;
 
-	background:linear-gradient(to bottom, #ffff00 5%, #ffff85 100%);
-	background-color:#ffff00;
+	background-color: #FFFC4F;
 	border-radius:6px;
 	border:1px solid #d6a100;
-	color:#000000;
-}
-.small_button:hover {
-	background:linear-gradient(to bottom, #ffff85 5%, #ffff00 100%);
-	background-color:#ffff85;
+	color: black;
 }
 
 .small_button_text {
