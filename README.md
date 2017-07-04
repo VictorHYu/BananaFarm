@@ -1,24 +1,7 @@
-# README
+#Banana Farm (Work In Progress)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A multi-player web-based idle game
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby version 2.3.1
+- Rails version 5.0.0.1
+- Styled with HTML and CSS
