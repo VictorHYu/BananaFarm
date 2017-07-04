@@ -38,8 +38,13 @@ class BananasController < ApplicationController
 		@banana = @farm.bananas.find(params[:banana_id])
 		@banana.increment(:length, by = 1)
 		@banana.save
+        
+        ActionCable.server.broadcast 'bananas',
+            action: 'increment',
+            id: params[:banana_id],
+            farm: params[:farm_id]
 
-		redirect_to farm_path(@farm)
+        #redirect_to farm_path(@farm)
 	end
 
 	def remove

@@ -2,11 +2,12 @@
 
 <div>
   <% @allbananas.each do |banana| %>
-  <div id = "banana_row">
+  <div id = <%="banana_row_" + banana.id.to_s%> class = "banana_row">
     <div class = "banana_row_top center">   
       <img class = 'banana' src = "/assets/bananas.png"> 
       <div class = 'param'> Name: <%= banana.flavour %> </div>
-      <div class = 'param'> Quantity: <%= banana.length  %> </div>
+      <div class = 'param'> Quantity: </div>
+      <div id = <%="length_id_" + banana.id.to_s%> class = 'param'> <%= banana.length %> </div>
       <div class = 'param'> Value: <%= banana.value   %> </div>
     </div>
 

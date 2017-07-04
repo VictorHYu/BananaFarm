@@ -4,7 +4,7 @@
 	text-align: center;
 }
 
-#banana_row {
+.banana_row {
 	margin: 30px auto;
 	width:500px;
 	float: center;
