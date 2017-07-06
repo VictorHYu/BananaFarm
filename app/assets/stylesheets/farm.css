@@ -4,7 +4,28 @@
 	text-align: center;
 }
 
-.banana_row {
+.farm-row {
+    margin: 30px auto;
+    width:500px;
+    float: center;
+    background: rgba(247,255,247, 0.6);
+    border-radius: 20px;
+    border: 3px solid #AAEFDF;
+    justify-content: space-around !important;
+}
+
+.farm-icon {
+}
+
+.farm-name {
+    font-size: 30px;
+    margin: 0;
+}
+
+.farm-row-right {
+}
+
+.banana-row {
 	margin: 30px auto;
 	width:500px;
 	float: center;
@@ -12,26 +33,23 @@
 	border-radius: 20px;
 	border: 3px solid #AAEFDF;
 }
-.banana_row_top {
+
+.banana-row-top {
 	
 }
 
-.banana_row_top {
-	
-}
-
-.banana {
+.banana-icon {
 	margin: 10px;
 	margin-right: auto;
-	border:4px ridge black;
+	border: 2px ridge black;
 	border-radius: 5px;
 }
 
-#new_banana{
+#new-banana{
 	position: relative;
 	margin: 0 auto;
 }
 
-#back_button{
+#back-button{
 	margin: 20px;
 }

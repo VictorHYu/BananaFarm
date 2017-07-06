@@ -1,18 +1,36 @@
-<h2>Currently Operating Farms</h2>
+<h2>Farms</h2>
  
-<table>
- 
-  <% @allfarms.each do |farm| %>
-    <tr>
-      <td><%= farm.title %></td>
-      <td><%= link_to 'Take me there!', farm_path(farm) %></td>
-      <td><%= link_to 'Re-name', edit_farm_path(farm) %></td>
-      <td><%= link_to 'Delete', farm_path(farm), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+<div>
+    <% @allfarms.each do |farm| %>
+    <div class = "farm-row center">
+        <img class = 'farm-icon icon' src = "/assets/farm.jpg">
+        <div class = "farm-name">
+            <%= farm.title %></td>
+        </div>
+        <div class = "farm-row-right">
+            <%= link_to farm_path(farm),
+                    class: "small-button button center" do %>
+                <h3 class = "small-button-text"> Let's go! </h3>
+            <% end %>
+            <%= link_to edit_farm_path(farm),
+                    class: "small-button button center" do %>
+                <h3 class = "small-button-text"> Rename </h3>
+            <% end %>
+            <%= link_to farm_path(farm),
+                    class: "small-button button center",
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } do %>
+                <h3 class = "small-button-text"> Delete </h3>
+            <% end %>
+        </div>
+    </div>
+    <% end %>
+</div>
 
-<br/>
-<%= link_to 'I want to start a new farm!', new_farm_path %>
-<br/>
-<%= link_to 'Back', root_url %>
+<%= link_to new_farm_path, class: "med-button button center", id: "new_farm_button" do %>
+    <h3 class = "med-button-text"> New Farm </h3>
+<% end %>
+
+<%= link_to root_url, class: "med-button button center", id: "back_button" do %>
+    <h3 class = "med-button-text"> Back </h3>
+<% end %>

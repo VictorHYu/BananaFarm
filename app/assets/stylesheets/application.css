@@ -3,15 +3,7 @@
  *= require_self
  */
 
-body{
-    background-image: url(/assets/beach.jpg);
-    background-repeat: none;
-    background-size: cover;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/beach.jpg);
-    background-attachment: fixed;
-}
-
-.no_margin{
+.no-margin{
     margin:0;
 }
 
@@ -24,8 +16,20 @@ body{
     flex-direction: column;
 }
 
+.horizontal-center {
+    margin: 0 auto;
+}
+
 .iblock{
     display: inline-block;
+}
+
+body{
+    background-image: url(/assets/beach.jpg);
+    background-repeat: none;
+    background-size: cover;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/beach.jpg);
+    background-attachment: fixed;
 }
 
 h1 {
@@ -50,8 +54,8 @@ a {
     cursor:pointer;
 }
 
-.med_button {
-    margin: 20px 0px 20px 0px;
+.med-button {
+    margin: 20px auto;
     
     width:120px;
     height: 40px;
@@ -62,14 +66,12 @@ a {
     color:#306108;
 }
 
-.med_button_text {
+.med-button-text {
     font-size: 20px;
 }
 
-
-.small_button {
+.small-button {
     margin: 10px 10px 10px 10px;
-    
     
     width:60px;
     height: 20px;
@@ -80,6 +82,15 @@ a {
     color: black;
 }
 
-.small_button_text {
+.small-button-text {
     font-size: 12px;
+}
+
+.icon {
+    width: auto;
+    height: 90px;
+    max-width: 200px;
+    margin: 10px;
+    border: 2px ridge black;
+    border-radius: 5px;
 }
