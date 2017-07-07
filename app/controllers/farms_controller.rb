@@ -1,12 +1,13 @@
 class FarmsController < ApplicationController
-	def index
+	respond_to :html, :xml, :json
+    
+    def index
 		@allfarms = Farm.all
 	end
 
 	def show
 		@farm = Farm.find(params[:id])
 		@allbananas = @farm.bananas.all
-
 	end
 
 	def new
@@ -15,10 +16,21 @@ class FarmsController < ApplicationController
 
 	def edit
 		@farm = Farm.find(params[:id])
+        respond_with(@farm)
 	end
+    
+    def update
+        @farm = Farm.find(params[:id])
+        if @farm.save
+            @farm = Farm.update(@farm.id,farm_params)
+            redirect_to farms_path
+        else
+            render 'edit'
+        end
+    end
 
 	def create
-	  @farm = Farm.new(farm_params) 	
+	  @farm = Farm.new(farm_params)
 	 
 	  if @farm.save
 		redirect_to @farm
@@ -35,7 +47,7 @@ class FarmsController < ApplicationController
 	end
 
 	private
-  		def farm_params
-    		params.require(:farms).permit(:title)
-  		end
+        def farm_params
+            params.require(:farm).permit(:title)
+        end
 end

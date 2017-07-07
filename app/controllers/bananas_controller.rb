@@ -33,7 +33,6 @@ class BananasController < ApplicationController
 	end
 
 	def add
-		sleep 3
 		@farm = Farm.find(params[:farm_id])
 		@banana = @farm.bananas.find(params[:banana_id])
 		@banana.increment(:length, by = 1)
@@ -48,8 +47,6 @@ class BananasController < ApplicationController
 	end
 
 	def remove
-		sleep 3
-
 		@farm = Farm.find(params[:farm_id])
 		@banana = @farm.bananas.find(params[:banana_id])
 		@banana.decrement(:length, by = 1)

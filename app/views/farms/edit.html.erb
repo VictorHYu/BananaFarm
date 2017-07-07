@@ -1,16 +1,10 @@
 <h2>Re-Name Farm</h2>
  
-<%= form_for :farms, url: farm_path(@farm), method: :patch do |f| %>
- 
-  <p>
-    <%= f.label :Name %><br>
+<%= form_for @farm do |f|%>
+
     <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+    <%= f.submit "Save Changes" %>
+
 <% end %>
  
 <%= link_to 'Back', farms_path %>

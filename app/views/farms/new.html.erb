@@ -1,6 +1,6 @@
 <h2>Start a New Farm</h2>
 
-<%= form_for :farms, url: farms_path do |f| %> 
+<%= form_for @farm do |f| %>
   <p>
     <%= f.label :Name %><br>
     <%= f.text_field :title %>
