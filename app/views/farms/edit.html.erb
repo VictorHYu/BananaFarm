@@ -1,11 +1,3 @@
 <h2>Rename Farm</h2>
 
-<%= form_for @farm, :html => {:class => 'form-wrapper center col'} do |f| %>
-    <div class = "form-background center col">
-        <h4> Farm Name </h4>
-        <%= f.text_field :title %>
-        <%= f.submit "Save Changes", :class => 'small-button button center small-button-text' %>
-    </div>
-    <%= link_to 'Back', farms_path, :class => 'med-button button center med-button-text' %>
-<% end %>
-
+<%= render partial: 'form', :farm => @farm %>

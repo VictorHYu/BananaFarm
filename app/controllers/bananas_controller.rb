@@ -16,20 +16,24 @@ class BananasController < ApplicationController
 	  		render 'new'
     	end
   	end
-
-	def edit
-		@farm = Farm.find(params[:farm_id])
-		@banana = @farm.bananas.find(params[:banana_id])
-	end
+    
+    def edit
+        @farm = Farm.find(params[:id])
+        @banana = @farm.bananas.find(params[:banana_id])
+        respond_with(@banana)
+    end
 
 	def update
-		sleep 3
 		@farm = Farm.find(params[:farm_id])
+        puts @farm.bananas.find(params[:id])
 		@banana = @farm.bananas.find(params[:id])
-		@banana.increment(:length, by = 1)
-		@banana.save
-
-		redirect_to farm_path(@farm)
+        
+        if @banana.save
+            @banana = Banana.update(@banana.id, banana_params)
+            redirect_to farm_path(@farm)
+        else
+            render 'edit'
+        end
 	end
 
 	def add

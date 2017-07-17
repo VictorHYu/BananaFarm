@@ -22,7 +22,7 @@ class FarmsController < ApplicationController
     def update
         @farm = Farm.find(params[:id])
         if @farm.save
-            @farm = Farm.update(@farm.id,farm_params)
+            @farm = Farm.update(@farm.id, farm_params)
             redirect_to farms_path
         else
             render 'edit'
@@ -30,20 +30,20 @@ class FarmsController < ApplicationController
     end
 
 	def create
-	  @farm = Farm.new(farm_params)
+        @farm = Farm.new(farm_params)
 	 
-	  if @farm.save
-		redirect_to @farm
-	  else
-	  	render 'new'
-	  end
+        if @farm.save
+            redirect_to farms_path
+        else
+            render 'new'
+        end
 	end
 
 	def destroy
-		  @farm = Farm.find(params[:id])
-  		  @farm.destroy
+        @farm = Farm.find(params[:id])
+        @farm.destroy
  
-  	      redirect_to farms_path
+        redirect_to farms_path
 	end
 
 	private

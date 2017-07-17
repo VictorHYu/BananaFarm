@@ -1,39 +1,5 @@
-<h1>Re-Name Banana</h1>
- 
-<%= form_for :bananas, url: edit_farm_banana_path(@banana), method: :patch do |f| %>
- 
-  <% if @banana.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@banana.errors.count, "error") %> prohibited this article from being saved:
-      </h2>
-      <ul>
-        <% @banana.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :Length %><br>
-    <%= f.text_field :length %>
-  </p>
- 
-  <p>
-    <%= f.label :Flavour %><br>
-    <%= f.text_area :flavour %>
-  </p>
+<h1> Modify Banana</h1>
 
-  <p>
-    <%= f.label :Value %><br>
-    <%= f.text_area :value %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
-<% end %>
- 
-<%= link_to 'Back', farm_path(@farm) %>
+<%= render partial: 'form', locals: {url: farm_banana_path(@farm, @banana), method: :patch}, :banana => @banana %>
+
+<%= link_to 'Back', farm_path(@farm), :class => 'med-button button center med-button-text' %>
