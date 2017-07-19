@@ -1,12 +1,12 @@
 <%= form_for @banana, :url => url, :method => method, :html => {:class => 'form-wrapper center col'} do |f| %>
     <% if @banana.errors.any? %>
         <div id="error_explanation">
-            <h2>
-                <%= pluralize(@banana.errors.count, "error") %> prohibited this article from being saved:
-            </h2>
+            <p style = "color: white">
+                <%= pluralize(@banana.errors.count, "error") %> prohibited this item from being saved:
+            </p>
         <ul>
             <% @banana.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
+                <li style = "color: white"><%= msg %></li>
             <% end %>
         </ul>
         </div>
@@ -14,8 +14,15 @@
 
     <div class = "form-background center col">
 
-        <%= f.label :Type %>
-        <%= f.text_area :flavour %>
+        <br>
+
+        <%= f.label :Name %>
+        <%= f.text_field :banana_name %>
+
+        <br>
+
+        <%= f.label :Index %>
+        <%= f.text_field :farm_banana_index, :value => get_max_banana_index(@farm.id) %>
 
         <br>
 
@@ -25,7 +32,7 @@
         <br>
 
         <%= f.label :Value %>
-        <%= f.text_area :value %>
+        <%= f.text_field :value %>
 
         <%= f.submit "Save Changes", :class => 'small-button button center small-button-text auto-size' %>
     

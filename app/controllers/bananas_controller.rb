@@ -10,6 +10,7 @@ class BananasController < ApplicationController
   	def create
 	    @farm = Farm.find(params[:farm_id])
     	@banana = @farm.bananas.build(banana_params)
+        puts @banana
     	if @banana.save
     		redirect_to farm_path(@farm)
     	else
@@ -61,6 +62,6 @@ class BananasController < ApplicationController
 
 	private
 	def banana_params
-		params.require(:banana).permit(:length, :flavour, :value)
+        params.require(:banana).permit(:length, :banana_name, :value, :farm_banana_index)
 	end
 end

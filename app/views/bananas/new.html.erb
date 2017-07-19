@@ -1,6 +1,6 @@
 <h1> New Banana </h1>
 
-<%= render partial: 'form', locals: {url: farm_bananas_path(@farm), method: :post} %>
+<%= render partial: 'form', locals: {url: farm_bananas_path(@farm), method: :post, :farm => @farm} %>
 
 <%= link_to 'Back', farm_path(@farm), :class => 'med-button button center med-button-text' %>
 

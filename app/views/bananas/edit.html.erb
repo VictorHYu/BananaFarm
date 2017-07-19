@@ -1,5 +1,5 @@
 <h1> Modify Banana</h1>
 
-<%= render partial: 'form', locals: {url: farm_banana_path(@farm, @banana), method: :patch}, :banana => @banana %>
+<%= render partial: 'form', locals: {url: farm_banana_path(@farm, @banana), method: :patch, :farm => @farm}, :banana => @banana %>
 
 <%= link_to 'Back', farm_path(@farm), :class => 'med-button button center med-button-text' %>
