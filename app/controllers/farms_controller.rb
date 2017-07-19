@@ -7,7 +7,7 @@ class FarmsController < ApplicationController
 
 	def show
 		@farm = Farm.find(params[:id])
-		@allbananas = @farm.bananas.all
+        @allbananas = @farm.bananas.all.order("id")
 	end
 
 	def new

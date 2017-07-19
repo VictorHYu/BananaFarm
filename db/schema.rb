@@ -10,30 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130083640) do
+ActiveRecord::Schema.define(version: 20170719050014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bananas", id: :serial, force: :cascade do |t|
-    t.integer "length"
-    t.string "flavour"
+    t.integer "farm_banana_index", null: false
+    t.integer "farm_id", null: false
+    t.string "banana_name", null: false
+    t.integer "value", null: false
+    t.integer "length", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "value"
-    t.integer "farm_id"
   end
 
   create_table "farms", id: :serial, force: :cascade do |t|
     t.string "title"
+    t.integer "coins", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "fertilizers", id: :serial, force: :cascade do |t|
-    t.integer "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "bananas", "farms"
 end
