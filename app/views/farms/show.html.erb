@@ -1,11 +1,19 @@
 <h2> <%= @farm.title %> </h2>
 
 <div>
+  <div id = <%="coins_row"%> class = "banana-row">
+        <h3 class = "center">
+            Coins: <%= @farm.coins %>
+        </h3>
+  </div>
+
   <% @allbananas.each do |banana| %>
   <div id = <%="banana_row_" + banana.id.to_s%> class = "banana-row">
     <div class = "banana-row-top center">
-      <img class = 'banana-icon icon' src = "/assets/bananas.png">
-      <div class = 'param'> Name: <%= banana.banana_name %> </div>
+      <%= link_to farm_banana_add_path(:banana_id => banana, :farm_id => @farm), :method => :patch do %>
+        <img src = "/assets/bananas.png" class = "banana-icon icon" %>
+      <% end %>
+      <div class = 'param'> <%= banana.banana_name %> </div>
       <div class = 'param'> Length: </div>
       <div id = <%="length_id_" + banana.id.to_s%> class = 'param'> <%= banana.length %> </div>
       <div class = 'param'> Value: <%= banana.value   %> </div>
