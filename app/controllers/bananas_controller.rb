@@ -43,6 +43,7 @@ class BananasController < ApplicationController
 		@banana.increment(:length, by = 1)
 		@banana.save
         
+        #Add to banana length
         ActionCable.server.broadcast 'bananas',
             action: 'increment',
             id: params[:banana_id],
@@ -56,6 +57,12 @@ class BananasController < ApplicationController
 		@banana = @farm.bananas.find(params[:banana_id])
 		@banana.decrement(:length, by = 1)
 		@banana.save
+
+        #Add to coins amount for farm
+        ActionCable.server.broadcast 'bananas',
+            action: 'sell',
+            id: params[:banana_id],
+            farm: params[:farm_id]
 
 		redirect_to farm_path(@farm)
 	end

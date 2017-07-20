@@ -20,8 +20,8 @@
         <h3 class = "small-button-text no-margin"> Grow </h3>
       <% end %>
 
-      <%= link_to farm_banana_remove_path(:banana_id => banana, :farm_id => @farm), :method  => :patch, data: { confirm: 'Are you really that hungry?' }, class: "small-button button center" do %>
-        <h3 class = "small-button-text no-margin"> Eat</h3>
+      <%= link_to farm_banana_remove_path(:banana_id => banana, :farm_id => @farm), :method  => :patch, data: { confirm: 'Are you sure you want to sell this banana?' }, class: "small-button button center" do %>
+        <h3 class = "small-button-text no-margin"> Sell </h3>
       <% end %>
     </div>
   </div>
