@@ -3,6 +3,10 @@
  *= require_self
  */
 
+/*
+    Layout Controls
+ */
+
 .no-margin{
     margin:0;
 }
@@ -28,6 +32,10 @@
 .iblock{
     display: inline-block;
 }
+
+/*
+    Built-In HTML Tags
+ */
 
 body{
     background-image: url(/assets/beach.jpg);
@@ -59,6 +67,22 @@ h4 {
 a {
     text-decoration: none !important;
     color: white;
+}
+
+input {
+    text-align: center;
+}
+
+/*
+    Default Global Custom Controls Styling
+ */
+.icon {
+    width: auto;
+    height: 90px;
+    max-width: 200px;
+    margin: 10px;
+    border: 2px ridge black;
+    border-radius: 5px;
 }
 
 .button {
@@ -112,13 +136,4 @@ a {
     border-radius: 6px;
     border:3px solid #63C132;
     color:black;
-}
-
-.icon {
-    width: auto;
-    height: 90px;
-    max-width: 200px;
-    margin: 10px;
-    border: 2px ridge black;
-    border-radius: 5px;
 }

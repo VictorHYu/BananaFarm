@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170719050014) do
+ActiveRecord::Schema.define(version: 20170721061606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,16 @@ ActiveRecord::Schema.define(version: 20170719050014) do
     t.integer "farm_banana_index", null: false
     t.integer "farm_id", null: false
     t.string "banana_name", null: false
-    t.integer "value", null: false
-    t.integer "length", null: false
+    t.integer "count", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tier", null: false
+    t.string "stat_type", null: false
+    t.integer "growth_stat", null: false
+    t.integer "time_stat", null: false
+    t.integer "value_stat", null: false
+    t.string "weather_type", null: false
+    t.boolean "is_special", null: false
   end
 
   create_table "farms", id: :serial, force: :cascade do |t|

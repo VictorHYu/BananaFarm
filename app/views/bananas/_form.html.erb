@@ -17,22 +17,9 @@
         <br>
 
         <%= f.label :Name %>
-        <%= f.text_field :banana_name, :value => get_banana_name %>
+        <%= f.text_field :banana_name, :value => "Use Default" %>
 
         <br>
-
-        <%= f.label :Index %>
-        <%= f.text_field :farm_banana_index, :value => get_max_banana_index(@farm.id) %>
-
-        <br>
-
-        <%= f.label :Length %>
-        <%= f.text_field :length, :value => 1 %>
-
-        <br>
-
-        <%= f.label :Value %>
-        <%= f.text_field :value, :value => get_banana_value(@farm.id) %>
 
         <%= f.submit "Save Changes", :class => 'small-button button center small-button-text auto-size' %>
     
