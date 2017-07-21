@@ -55,17 +55,21 @@ class BananasController < ApplicationController
 	def remove
 		@farm = Farm.find(params[:farm_id])
 		@banana = @farm.bananas.find(params[:banana_id])
+        
+        coinsEarned = @banana.value * @banana.length
+        
+        @farm.coins = @farm.coins + coinsEarned
+        @farm.save
+        
         @banana.length = 0
         @banana.save
-        
-        @farm.coins = @farm.coins + @banana.value
-        @farm.save
 
         #Add to coins amount for farm
         ActionCable.server.broadcast 'bananas',
             action: 'sell',
             id: params[:banana_id],
-            farm: params[:farm_id]
+            farm: params[:farm_id],
+            coins: coinsEarned
 
         #redirect_to farm_path(@farm)
 	end

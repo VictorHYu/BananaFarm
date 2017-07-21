@@ -14,15 +14,9 @@
     justify-content: space-around !important;
 }
 
-.farm-icon {
-}
-
 .farm-name {
     font-size: 30px;
     margin: 0;
-}
-
-.farm-row-right {
 }
 
 .banana-row {
@@ -34,15 +28,26 @@
 	border: 3px solid #AAEFDF;
 }
 
-.banana-row-top {
-	
-}
-
 .banana-icon {
 	margin: 10px;
 	margin-right: auto;
 	border: 2px ridge black;
 	border-radius: 5px;
+}
+
+.coins-row {
+    margin: 30px auto;
+    width:500px;
+    float: center;
+    background: rgba(247,255,247, 0.6);
+    border-radius: 20px;
+    border: 3px solid #AAEFDF;
+    justify-content: space-between !important;
+}
+
+.coin-icon {
+    margin: 0 !important;
+    border: none !important;
 }
 
 #new-banana{

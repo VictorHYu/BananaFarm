@@ -1,10 +1,12 @@
 <h2> <%= @farm.title %> </h2>
 
 <div>
-  <div id = <%="coins_row"%> class = "banana-row">
-        <h3 class = "center">
-            Coins: <%= @farm.coins %>
+  <div id = <%="coins_row"%> class = "coins-row center">
+        <img src = "/assets/coins.png" class = "icon coin-icon" %>
+        <h3 id = "coins_amount" "class = "center">
+            <%= @farm.coins %>
         </h3>
+        <img src = "/assets/coins.png" class = "icon coin-icon" %>
   </div>
 
   <% @allbananas.each do |banana| %>
