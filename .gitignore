@@ -46,3 +46,6 @@ bower.json
 # OS generated files 
 .DS_Store
 .DS_Store?
+
+# API keys file
+/config/local_env.yml
