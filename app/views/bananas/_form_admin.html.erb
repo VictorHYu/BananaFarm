@@ -1,0 +1,58 @@
+<%= form_for @banana, :url => url, :method => method, :html => {:class => 'form-wrapper center col'} do |f| %>
+    <% if @banana.errors.any? %>
+        <div id="error_explanation">
+            <p style = "color: white">
+                <%= pluralize(@banana.errors.count, "error") %> prohibited this item from being saved:
+            </p>
+        <ul>
+            <% @banana.errors.full_messages.each do |msg| %>
+                <li style = "color: white"><%= msg %></li>
+            <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <div class = "form-background center col">
+
+        <br>
+
+        <%= f.label :Name %>
+        <%= f.text_field :banana_name %>
+
+        <%= f.label :"Farm Banana Index" %>
+        <%= f.text_field :farm_banana_index %>
+
+        <%= f.label :"Farm Id" %>
+        <%= f.text_field :farm_id %>
+
+        <%= f.label :Count %>
+        <%= f.text_field :count %>
+
+        <%= f.label :Tier %>
+        <%= f.text_field :tier %>
+
+        <%= f.label :"Stat Type" %>
+        <%= f.text_field :stat_type %>
+
+        <%= f.label :Growth %>
+        <%= f.text_field :growth_stat %>
+
+        <%= f.label :Time %>
+        <%= f.text_field :time_stat %>
+
+        <%= f.label :Value %>
+        <%= f.text_field :value_stat %>
+
+        <%= f.label :"Weather Type" %>
+        <%= f.text_field :weather_type %>
+
+        <%= f.label :Special? %>
+        <%= f.text_field :is_special %>
+
+        <br>
+
+        <%= f.submit "Save Changes", :class => 'small-button button center small-button-text auto-size' %>
+
+    </div>
+
+<% end %>
