@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'responders'
 
 gem 'jquery-rails'
+
+# Use for http requests to web APIs
+gem 'httparty', '~> 0.13.7'
