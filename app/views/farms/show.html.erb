@@ -9,6 +9,18 @@
         <img src = "/assets/coins.png" class = "icon coin-icon" %>
   </div>
 
+  <div id = <%="coins_row"%> class = "coins-row center">
+    <img src = <%= getWeatherIcon(@farm.weather_icon) %> class = "icon coin-icon" %>
+
+    <h3 id = "coins_amount" "class = "center col">
+        Temperature: <%= @farm.weather_temperature %> degrees
+        <br>
+        Conditions: <%= getWeatherString(@farm.weather_main) %>
+    </h3>
+
+    <img src = <%= getWeatherIcon(@farm.weather_icon) %> class = "icon coin-icon" %>
+  </div>
+
   <% @allbananas.each do |banana| %>
     <%= render partial: 'bananas/show', locals: {:banana => banana} %>
   <% end %>

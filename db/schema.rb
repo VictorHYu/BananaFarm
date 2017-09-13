@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721061606) do
+ActiveRecord::Schema.define(version: 20170913031035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20170721061606) do
     t.integer "coins", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "weather_temperature", default: 999, null: false
+    t.string "weather_main", default: "none", null: false
+    t.string "weather_icon", default: "01d.png", null: false
+    t.datetime "weather_last_updated", default: "2000-01-01 01:01:01", null: false
   end
 
   add_foreign_key "bananas", "farms"
